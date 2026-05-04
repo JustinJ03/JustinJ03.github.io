@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Justin J. — Software Engineer Portfolio</title>
+  <meta name="description" content="Software engineer specializing in full-stack web development."/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#050816',
+            secondary: '#0a0f2e',
+            accent: { DEFAULT: '#6c63ff', 2: '#00d4ff' }
+          },
+          fontFamily: { inter: ['Inter','sans-serif'], mono: ['Fira Code','monospace'] }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-inter bg-primary text-slate-100 overflow-x-hidden">
+
+<!-- Cursor Glow -->
+<div id="cursorGlow" class="fixed w-72 h-72 rounded-full pointer-events-none z-0 -translate-x-1/2 -translate-y-1/2" style="background:radial-gradient(circle,rgba(108,99,255,0.08) 0%,transparent 70%);transition:left .1s,top .1s;"></div>
+
+<!-- Navbar -->
+<nav id="navbar" class="fixed top-0 w-full z-50 px-8 py-5 flex items-center justify-between backdrop-blur-xl border-b border-accent/20 transition-all duration-300" style="background:rgba(5,8,22,0.85);">
+  <div class="text-xl font-black tracking-tight bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">&lt;JustinJ /&gt;</div>
+  <ul class="hidden md:flex items-center gap-8 list-none">
+    <li><a href="#about"      class="nav-link text-slate-400 hover:text-white text-sm font-medium transition-colors">About</a></li>
+    <li><a href="#skills"     class="nav-link text-slate-400 hover:text-white text-sm font-medium transition-colors">Skills</a></li>
+    <li><a href="#projects"   class="nav-link text-slate-400 hover:text-white text-sm font-medium transition-colors">Projects</a></li>
+    <li><a href="#experience" class="nav-link text-slate-400 hover:text-white text-sm font-medium transition-colors">Experience</a></li>
+    <li><a href="#contact" class="px-5 py-2 border border-accent rounded-lg text-accent text-sm font-semibold hover:bg-accent hover:text-white transition-all duration-300">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden" style="background:linear-gradient(135deg,#050816,#0a0f2e,#0d0a2e);">
+  <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image:url('hero_bg.png');"></div>
+  <div id="particles" class="absolute inset-0 overflow-hidden"></div>
+
+  <div class="relative z-10 max-w-4xl px-8 text-center">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs text-accent-2 border border-accent-2/30 bg-accent-2/5 mb-6 animate-fade-up">
+      <span class="badge-dot w-1.5 h-1.5 rounded-full bg-accent-2 inline-block"></span>
+      Available for Opportunities
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-6xl md:text-8xl font-black tracking-tight leading-none mb-6 animate-fade-up">
+      <span class="bg-gradient-to-br from-white via-accent to-accent-2 bg-clip-text text-transparent">Justin J.</span>
+      <span class="block mt-4 text-2xl md:text-3xl font-normal text-slate-400">
+        <span id="typed-text"></span><span class="typed-cursor text-accent-2">|</span>
+      </span>
+    </h1>
+
+    <p class="text-slate-400 text-lg max-w-xl mx-auto mb-10 animate-fade-up">
+      I craft high-performance, scalable web applications and elegant user experiences. Passionate about clean code, open source, and solving real-world problems.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex gap-4 justify-center flex-wrap mb-16 animate-fade-up">
+      <a href="#projects" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-white hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/50 transition-all duration-300" style="background:linear-gradient(135deg,#6c63ff,#00d4ff);">🚀 View My Work</a>
+      <a href="#contact"  class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold border border-accent/30 bg-white/5 backdrop-blur-md hover:border-accent hover:text-accent hover:-translate-y-1 transition-all duration-300">💬 Let's Talk</a>
+    </div>
+
+    <!-- Stats -->
+    <div class="flex gap-10 justify-center">
+      <div class="text-center"><div class="text-3xl font-black bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent" data-count="3">0</div><div class="text-xs text-slate-500 mt-1">Years Exp.</div></div>
+      <div class="text-center"><div class="text-3xl font-black bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent" data-count="20">0</div><div class="text-xs text-slate-500 mt-1">Projects</div></div>
+      <div class="text-center"><div class="text-3xl font-black bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent" data-count="12">0</div><div class="text-xs text-slate-500 mt-1">Technologies</div></div>
+      <div class="text-center"><div class="text-3xl font-black bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent" data-count="5">0</div><div class="text-xs text-slate-500 mt-1">Clients</div></div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-ind absolute bottom-8 left-1/2 flex flex-col items-center gap-1 text-slate-500 text-xs">
+    <span>Scroll down</span><span>↓</span>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-24 px-8" style="background:#0a0f2e;">
+  <div class="text-center mb-16 reveal">
+    <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase text-accent bg-accent/10 border border-accent/25 mb-4">// who i am</span>
+    <h2 class="text-4xl md:text-5xl font-black tracking-tight">About <span class="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">Me</span></h2>
+  </div>
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <!-- Avatar -->
+    <div class="relative flex justify-center reveal">
+      <div class="avatar-ring"></div>
+      <img src="avatar.png" alt="Justin J." class="w-64 h-64 rounded-full object-cover relative z-10 shadow-2xl" style="box-shadow:0 0 60px rgba(108,99,255,0.3);"/>
+    </div>
+    <!-- Bio -->
+    <div class="reveal">
+      <h3 class="text-2xl font-bold mb-4">Software Engineer &amp; Problem Solver</h3>
+      <p class="text-slate-400 text-sm leading-relaxed mb-3">Hi! I'm Justin — a passionate software engineer who loves turning complex problems into elegant, scalable solutions using modern web technologies.</p>
+      <p class="text-slate-400 text-sm leading-relaxed mb-6">When not coding, I explore new tech, contribute to open source, and mentor aspiring developers.</p>
+      <div class="grid grid-cols-2 gap-3 mb-6 text-sm">
+        <div class="flex gap-2"><span>📍</span><span class="text-slate-500">Location:</span><span class="font-medium">Philippines</span></div>
+        <div class="flex gap-2"><span>🎓</span><span class="text-slate-500">Degree:</span><span class="font-medium">BS Comp Sci</span></div>
+        <div class="flex gap-2"><span>💼</span><span class="text-slate-500">Status:</span><span class="font-medium text-green-400">Open to Work</span></div>
+        <div class="flex gap-2"><span>🌐</span><span class="text-slate-500">Languages:</span><span class="font-medium">EN, Filipino</span></div>
+      </div>
+      <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300" style="background:linear-gradient(135deg,#6c63ff,#00d4ff);">Download CV 📄</a>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-24 px-8 bg-primary">
+  <div class="text-center mb-16 reveal">
+    <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase text-accent bg-accent/10 border border-accent/25 mb-4">// what i use</span>
+    <h2 class="text-4xl md:text-5xl font-black tracking-tight">Tech <span class="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">Stack</span></h2>
+    <p class="text-slate-500 mt-3 text-sm">Technologies and tools I work with every day</p>
+  </div>
+  <div class="max-w-5xl mx-auto grid sm:grid-cols-2 gap-6">
+
+    <div class="skill-card relative overflow-hidden bg-white/[0.04] border border-accent/20 rounded-2xl p-7 backdrop-blur-md hover:-translate-y-1 hover:border-accent hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 reveal">
+      <div class="text-3xl mb-4">🖥️</div>
+      <div class="font-bold mb-4 text-sm">Frontend Development</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">React</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Next.js</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">TypeScript</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">HTML5</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">CSS3</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Tailwind</span>
+      </div>
+    </div>
+
+    <div class="skill-card relative overflow-hidden bg-white/[0.04] border border-accent/20 rounded-2xl p-7 backdrop-blur-md hover:-translate-y-1 hover:border-accent hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 reveal">
+      <div class="text-3xl mb-4">⚙️</div>
+      <div class="font-bold mb-4 text-sm">Backend Development</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Node.js</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Laravel</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Express</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">REST API</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">PHP</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Python</span>
+      </div>
+    </div>
+
+    <div class="skill-card relative overflow-hidden bg-white/[0.04] border border-accent/20 rounded-2xl p-7 backdrop-blur-md hover:-translate-y-1 hover:border-accent hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 reveal">
+      <div class="text-3xl mb-4">🗄️</div>
+      <div class="font-bold mb-4 text-sm">Database &amp; Cloud</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">MySQL</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">PostgreSQL</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">MongoDB</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Redis</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">AWS</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Firebase</span>
+      </div>
+    </div>
+
+    <div class="skill-card relative overflow-hidden bg-white/[0.04] border border-accent/20 rounded-2xl p-7 backdrop-blur-md hover:-translate-y-1 hover:border-accent hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 reveal">
+      <div class="text-3xl mb-4">🛠️</div>
+      <div class="font-bold mb-4 text-sm">Tools &amp; DevOps</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Git</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Docker</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">GitHub Actions</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Linux</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Vite</span>
+        <span class="px-3 py-1 rounded text-xs font-mono bg-accent/10 text-accent border border-accent/20">Figma</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-24 px-8" style="background:#0a0f2e;">
+  <div class="text-center mb-16 reveal">
+    <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase text-accent bg-accent/10 border border-accent/25 mb-4">// what i've built</span>
+    <h2 class="text-4xl md:text-5xl font-black tracking-tight">Featured <span class="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">Projects</span></h2>
+    <p class="text-slate-500 mt-3 text-sm">A selection of my recent work</p>
+  </div>
+  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+
+    <!-- Project 1 -->
+    <div class="project-card bg-white/[0.04] border border-accent/20 rounded-2xl overflow-hidden hover:-translate-y-2 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 reveal">
+      <div class="h-44 flex items-center justify-center relative" style="background:linear-gradient(135deg,#0a0f2e,#1a0a3e);">
+        <span class="text-5xl">🏋️</span>
+        <div class="project-overlay absolute inset-0 flex items-center justify-center gap-3 opacity-0 transition-opacity duration-300" style="background:linear-gradient(135deg,rgba(108,99,255,0.85),rgba(0,212,255,0.85));">
+          <a href="#" class="px-3 py-1.5 border-2 border-white rounded text-white text-xs font-bold hover:bg-white hover:text-accent transition-all">Live</a>
+          <a href="#" class="px-3 py-1.5 border-2 border-white rounded text-white text-xs font-bold hover:bg-white hover:text-accent transition-all">GitHub</a>
+        </div>
+      </div>
+      <div class="p-5">
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">Next.js</span>
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">Laravel</span>
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">MySQL</span>
+        </div>
+        <h3 class="font-bold mb-2">GymFlow — Management System</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Full-stack gym dashboard with member tracking, trainer scheduling, payments, and real-time analytics.</p>
+      </div>
+      <div class="flex gap-4 px-5 py-3 border-t border-accent/10 text-xs text-slate-500">
+        <a href="#" class="hover:text-accent-2 transition-colors">🔗 Demo</a>
+        <a href="#" class="hover:text-accent-2 transition-colors">⭐ 48</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card bg-white/[0.04] border border-accent/20 rounded-2xl overflow-hidden hover:-translate-y-2 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 reveal">
+      <div class="h-44 flex items-center justify-center relative" style="background:linear-gradient(135deg,#0a0f2e,#1a0a3e);">
+        <span class="text-5xl">🛒</span>
+        <div class="project-overlay absolute inset-0 flex items-center justify-center gap-3 opacity-0 transition-opacity duration-300" style="background:linear-gradient(135deg,rgba(108,99,255,0.85),rgba(0,212,255,0.85));">
+          <a href="#" class="px-3 py-1.5 border-2 border-white rounded text-white text-xs font-bold hover:bg-white hover:text-accent transition-all">Live</a>
+          <a href="#" class="px-3 py-1.5 border-2 border-white rounded text-white text-xs font-bold hover:bg-white hover:text-accent transition-all">GitHub</a>
+        </div>
+      </div>
+      <div class="p-5">
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">React</span>
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">Node.js</span>
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">MongoDB</span>
+        </div>
+        <h3 class="font-bold mb-2">ShopSphere — E-Commerce</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Scalable e-commerce with cart, Stripe payments, product management, and order tracking.</p>
+      </div>
+      <div class="flex gap-4 px-5 py-3 border-t border-accent/10 text-xs text-slate-500">
+        <a href="#" class="hover:text-accent-2 transition-colors">🔗 Demo</a>
+        <a href="#" class="hover:text-accent-2 transition-colors">⭐ 72</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card bg-white/[0.04] border border-accent/20 rounded-2xl overflow-hidden hover:-translate-y-2 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 reveal">
+      <div class="h-44 flex items-center justify-center relative" style="background:linear-gradient(135deg,#0a0f2e,#1a0a3e);">
+        <span class="text-5xl">🤖</span>
+        <div class="project-overlay absolute inset-0 flex items-center justify-center gap-3 opacity-0 transition-opacity duration-300" style="background:linear-gradient(135deg,rgba(108,99,255,0.85),rgba(0,212,255,0.85));">
+          <a href="#" class="px-3 py-1.5 border-2 border-white rounded text-white text-xs font-bold hover:bg-white hover:text-accent transition-all">Live</a>
+          <a href="#" class="px-3 py-1.5 border-2 border-white rounded text-white text-xs font-bold hover:bg-white hover:text-accent transition-all">GitHub</a>
+        </div>
+      </div>
+      <div class="p-5">
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">Python</span>
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">FastAPI</span>
+          <span class="px-2 py-0.5 rounded text-xs font-mono bg-accent-2/10 text-accent-2 border border-accent-2/20">OpenAI</span>
+        </div>
+        <h3 class="font-bold mb-2">DevAssist — AI Code Helper</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">AI-powered assistant that explains code, suggests optimizations, and auto-generates unit tests.</p>
+      </div>
+      <div class="flex gap-4 px-5 py-3 border-t border-accent/10 text-xs text-slate-500">
+        <a href="#" class="hover:text-accent-2 transition-colors">🔗 Demo</a>
+        <a href="#" class="hover:text-accent-2 transition-colors">⭐ 95</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="py-24 px-8 bg-primary">
+  <div class="text-center mb-16 reveal">
+    <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase text-accent bg-accent/10 border border-accent/25 mb-4">// my journey</span>
+    <h2 class="text-4xl md:text-5xl font-black tracking-tight">Work <span class="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">Experience</span></h2>
+  </div>
+  <div class="timeline max-w-3xl mx-auto relative">
+
+    <div class="flex gap-8 mb-12 reveal">
+      <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl z-10 shadow-lg" style="background:linear-gradient(135deg,#6c63ff,#00d4ff);box-shadow:0 0 20px rgba(108,99,255,0.4);">💼</div>
+      <div class="bg-white/[0.04] border border-accent/20 rounded-2xl p-6 flex-1 hover:border-accent hover:translate-x-1 transition-all duration-300">
+        <div class="text-xs text-accent-2 font-mono font-semibold mb-1">2024 — Present</div>
+        <div class="font-bold text-base mb-0.5">Junior Software Engineer</div>
+        <div class="text-slate-400 text-sm mb-4">TechCorp Solutions · Full-time</div>
+        <ul class="space-y-1">
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Built RESTful APIs serving 50k+ daily active users</li>
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Reduced page load times by 40% via code splitting</li>
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Collaborated with cross-functional teams in Agile/Scrum</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex gap-8 mb-12 reveal">
+      <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl z-10" style="background:linear-gradient(135deg,#6c63ff,#00d4ff);box-shadow:0 0 20px rgba(108,99,255,0.4);">🎓</div>
+      <div class="bg-white/[0.04] border border-accent/20 rounded-2xl p-6 flex-1 hover:border-accent hover:translate-x-1 transition-all duration-300">
+        <div class="text-xs text-accent-2 font-mono font-semibold mb-1">2023 — 2024</div>
+        <div class="font-bold text-base mb-0.5">Frontend Developer Intern</div>
+        <div class="text-slate-400 text-sm mb-4">StartupHub PH · Internship</div>
+        <ul class="space-y-1">
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Built responsive UI components in React and TypeScript</li>
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Integrated Stripe and Google Maps APIs</li>
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Improved test coverage by 25% through code reviews</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex gap-8 reveal">
+      <div class="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-xl z-10" style="background:linear-gradient(135deg,#6c63ff,#00d4ff);box-shadow:0 0 20px rgba(108,99,255,0.4);">🚀</div>
+      <div class="bg-white/[0.04] border border-accent/20 rounded-2xl p-6 flex-1 hover:border-accent hover:translate-x-1 transition-all duration-300">
+        <div class="text-xs text-accent-2 font-mono font-semibold mb-1">2022 — 2023</div>
+        <div class="font-bold text-base mb-0.5">Freelance Web Developer</div>
+        <div class="text-slate-400 text-sm mb-4">Self-employed · Contract</div>
+        <ul class="space-y-1">
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Delivered 10+ custom websites for small businesses</li>
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Managed full project lifecycle from design to deployment</li>
+          <li class="text-slate-400 text-xs pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-accent">Maintained 100% client satisfaction on Upwork</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 px-8" style="background:#0a0f2e;">
+  <div class="text-center mb-16 reveal">
+    <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase text-accent bg-accent/10 border border-accent/25 mb-4">// get in touch</span>
+    <h2 class="text-4xl md:text-5xl font-black tracking-tight">Let's <span class="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">Connect</span></h2>
+    <p class="text-slate-500 mt-3 text-sm">Have a project in mind? Let's build something great together.</p>
+  </div>
+  <div class="max-w-2xl mx-auto reveal">
+    <div class="bg-white/[0.04] border border-accent/20 rounded-3xl p-10 backdrop-blur-xl" style="box-shadow:0 0 80px rgba(108,99,255,0.06);">
+      <form id="contactForm" class="flex flex-col gap-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="flex flex-col gap-1.5">
+            <label class="text-xs font-semibold text-slate-500 tracking-wide" for="name">Your Name</label>
+            <input id="name" type="text" placeholder="John Doe" required class="bg-white/[0.04] border border-accent/20 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all"/>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="text-xs font-semibold text-slate-500 tracking-wide" for="email">Email Address</label>
+            <input id="email" type="email" placeholder="john@email.com" required class="bg-white/[0.04] border border-accent/20 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all"/>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs font-semibold text-slate-500 tracking-wide" for="subject">Subject</label>
+          <input id="subject" type="text" placeholder="Project Inquiry" class="bg-white/[0.04] border border-accent/20 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all"/>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs font-semibold text-slate-500 tracking-wide" for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Tell me about your project..." required class="bg-white/[0.04] border border-accent/20 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all resize-none"></textarea>
+        </div>
+        <button id="submitBtn" type="submit" class="py-3.5 rounded-xl font-bold text-white text-base flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-accent/40 transition-all duration-300" style="background:linear-gradient(135deg,#6c63ff,#00d4ff);">
+          <span id="btnText">Send Message ✉️</span>
+        </button>
+      </form>
+      <!-- Socials -->
+      <div class="flex justify-center gap-4 mt-8">
+        <a href="https://github.com/JustinJ03" target="_blank" class="w-11 h-11 rounded-xl border border-accent/20 bg-white/[0.04] flex items-center justify-center text-slate-400 hover:border-accent hover:text-accent hover:-translate-y-1 transition-all duration-300" title="GitHub">🐙</a>
+        <a href="https://linkedin.com" target="_blank" class="w-11 h-11 rounded-xl border border-accent/20 bg-white/[0.04] flex items-center justify-center text-slate-400 hover:border-accent hover:text-accent hover:-translate-y-1 transition-all duration-300" title="LinkedIn">💼</a>
+        <a href="https://twitter.com" target="_blank" class="w-11 h-11 rounded-xl border border-accent/20 bg-white/[0.04] flex items-center justify-center text-slate-400 hover:border-accent hover:text-accent hover:-translate-y-1 transition-all duration-300" title="Twitter">🐦</a>
+        <a href="mailto:justin@email.com" class="w-11 h-11 rounded-xl border border-accent/20 bg-white/[0.04] flex items-center justify-center text-slate-400 hover:border-accent hover:text-accent hover:-translate-y-1 transition-all duration-300" title="Email">📧</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary border-t border-accent/10 py-8 text-center text-slate-500 text-sm">
+  <p>Designed &amp; Built by <span class="text-accent font-semibold">Justin J.</span> · <span id="year"></span></p>
+  <p class="mt-1 text-xs">Made with ❤️ and ☕ · Open to work worldwide</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
