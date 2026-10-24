@@ -1,0 +1,23 @@
+---
+interface Props { category: string; slug?: string; }
+const { category, slug } = Astro.props;
+---
+<svg viewBox="0 0 320 180" fill="none" aria-hidden="true" class="project-art">
+  <circle cx="160" cy="90" r="63" fill="var(--sun)" opacity=".65" />
+  <g stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  {slug === 'chirper' ? <>
+    <path d="M91 47h116v65h-66l-24 19v-19H91Z" fill="var(--surface)"/><path d="M111 67h72m-72 15h51"/>
+    <path d="M166 94h70v49h-14v15l-21-15h-35Z" fill="var(--sage)"/><path d="M180 112h42m-42 13h28"/>
+  </> : category === 'desktop' ? <>
+    <path d="M104 45h112v79H104z" fill="var(--surface)"/><path d="M116 57h88v55h-88zM146 124v13h-18v7h64v-7h-18v-13"/>
+    <path d="m143 84 11 11 23-24M91 144h138"/>
+  </> : category === 'web' ? <>
+    <path d="M99 124V56h91v68z" fill="var(--surface)"/><path d="M99 72h91m-78-8h2m7 0h2m7 0h2"/>
+    <path d="M132 93h88v54h-88z" fill="var(--sage)"/><path d="m145 132 17-18 18 9 23-20m-10 0h10v10"/>
+    <path d="M76 148h167M210 58v20m-10-10h20"/>
+  </> : <>
+    <path d="M160 145V55m0 61c-39 0-49-21-44-38 32 0 45 16 44 38Zm0-27c33 0 45-18 41-35-29 0-41 14-41 35Z" fill="var(--sage)"/><path d="M130 145h60m-48 8h36"/>
+  </>}
+  <path d="M60 56h16m-8-8v16m172 59h16m-8-8v16"/><circle cx="238" cy="47" r="4"/>
+  </g>
+</svg>

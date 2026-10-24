@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectArt from '../../components/ProjectArt.astro';
+import { projects, type Project } from '../../data/projects';
+import { path, httpsUrl } from '../../utils/paths';
+export function getStaticPaths() { return projects.map(project => ({ params: { slug: project.slug }, props: { project } })); }
+interface Props { project: Project; }
+const { project } = Astro.props;
+---
+<BaseLayout title={`${project.title} — Justin Joel`} description={project.summary}>
+  <article class="container section detail">
+    <a class="text-link" href={path(project.featured ? '#projects' : '#explorations')}>← Back to {project.featured ? 'projects' : 'explorations'}</a>
+    <header class="detail-header"><p class="eyebrow">{project.context}</p><p class="status">{project.statusLabel}</p><h1>{project.title}</h1><p class="detail-subtitle">{project.subtitle}</p><p class="detail-summary">{project.summary}</p></header>
+    <div class="detail-grid"><div><section><h2>{project.featured ? 'The problem addressed' : 'The idea being explored'}</h2><p>{project.problem}</p></section><section><h2>{project.featured ? 'What I worked on' : 'Exploration so far'}</h2><ul class="contributions">{project.contributions.map(contribution => <li>{contribution}</li>)}</ul></section><section><h2>Technologies{!project.featured && ' under exploration'}</h2><ul class="tags">{project.technologies.map(technology => <li>{technology}</li>)}</ul></section>
+    {(httpsUrl(project.repoUrl) || httpsUrl(project.demoUrl)) && <section class="flex flex-wrap gap-4" aria-label="Project links">{httpsUrl(project.repoUrl) && <a class="button primary" href={httpsUrl(project.repoUrl)}>View repository ↗</a>}{httpsUrl(project.demoUrl) && <a class="button" href={httpsUrl(project.demoUrl)}>Live demo ↗</a>}</section>}
+    </div><figure class="panel detail-art">{project.image ? <img src={path(project.image.src)} alt={project.image.alt} width="640" height="360" /> : <ProjectArt category={project.category} slug={project.slug} />}<figcaption>{project.image?.kind === 'screenshot' ? 'Project screenshot' : 'Original project illustration · not an application screenshot'}</figcaption></figure></div>
+    <div class="detail-bottom"><p>Curious about this work?</p><a class="button primary" href={path('#contact')}>Let’s connect ↗</a></div>
+  </article>
+</BaseLayout>
