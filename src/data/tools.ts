@@ -58,7 +58,7 @@ export const tools: Tool[] = entries.map(([id, name, category, description, url]
   id, name, category, description, url,
   iconPath: brandAssets[id] ? `icons/brands/${brandAssets[id].filename}` : null,
   iconSourceUrl: brandAssets[id]?.source ?? null,
-  iconKind: brandAssets[id] ? 'official' : 'none',
+  iconKind: brandAssets[id] ? (id === 'javascript' ? 'community' : 'official') : 'none',
 }));
 
 export function getTool(id: string): Tool {

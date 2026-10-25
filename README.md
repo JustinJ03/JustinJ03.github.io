@@ -40,9 +40,9 @@ All external links use ordinary same-tab navigation, preserving native modifier-
 
 ## Carousel behavior
 
-Each labeled region contains one semantic list. Native horizontal scrolling works without JavaScript; script-dependent controls stay hidden until initialized. The script moves at 24 CSS pixels/second and reverses gently at either end. It accumulates fractional positions and caps frame deltas to avoid stalls and jumps.
+Each labeled region contains one semantic list. Native horizontal scrolling works without JavaScript. With JavaScript, the script moves continuously forward at 24 CSS pixels/second, wrapping seamlessly from the last tool back to the first. Visual copies on either side provide a buffer; these copies are hidden from assistive technology and excluded from the tab order. The original links remain keyboard accessible. Fractional positions and bounded frame deltas prevent stalls and jumps.
 
-Hover pauses temporarily. Focus, horizontal manual scrolling, touch interaction, dragging, or Previous/Next persist a pause until Play. Play clears persistent pause requests, but motion still waits while the pointer or focus remains in the row. Reduced motion starts paused; explicit Play can opt in. Resizing, hidden tabs and offscreen observations never clear a selected pause. Rows without overflow hide unnecessary controls. Dragging starts only after six horizontal pixels; links keep ordinary, keyboard and modifier-click behavior. Vertical page scrolling is not intercepted.
+There are no Previous, Next, Pause or Play buttons. Hover pauses immediately; leaving resumes movement. Mouse dragging and native touch swiping move the row directly, with auto-motion resuming after the interaction settles. Keyboard focus pauses motion until it leaves; arrow keys remain a keyboard alternative to gestures. Reduced motion disables auto-scrolling. Hidden/offscreen rows stop, and rows whose tools all fit do not loop or create visual copies. Dragging starts after six horizontal pixels; ordinary, keyboard and modifier-click links remain intact. Vertical page scrolling is not intercepted.
 
 ## GitHub Pages, when publication is requested
 

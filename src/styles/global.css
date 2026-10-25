@@ -52,10 +52,6 @@ h2 { font-size: clamp(28px, 3.8vw, 39px); line-height: 1.22; font-weight: 600; l
 .row-title { display: flex; align-items: baseline; gap: 13px; flex-wrap: wrap; }
 .row-heading h3 { font-size: 15px; font-weight: 600; line-height: 1.45; }
 .exploring-note { color: var(--color-violet); font-size: 11px; }
-.carousel-controls { display: flex; gap: 6px; flex-shrink: 0; }
-.carousel-controls button { min-width: 36px; height: 36px; padding: 0 8px; border: 1px solid var(--color-outline); border-radius: 7px; background: transparent; font-size: 16px; }
-.carousel-controls button:hover:not(:disabled) { border-color: var(--color-cyan); color: var(--color-cyan); }
-.carousel-controls .motion-toggle { min-width: 76px; display: flex; justify-content: center; align-items: center; gap: 7px; font-size: 11px; }
 .carousel-viewport { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: #30394c transparent; padding: 8px 6px 14px; margin-inline: -6px; cursor: grab; border-radius: 6px; }
 .carousel-viewport.is-dragging { cursor: grabbing; user-select: none; }
 .carousel-viewport.is-dragging a { cursor: grabbing; }
@@ -121,9 +117,6 @@ h2 { font-size: clamp(28px, 3.8vw, 39px); line-height: 1.22; font-weight: 600; l
   .row-heading { align-items: flex-start; }
   .row-title { flex-direction: column; gap: 3px; padding-top: 5px; }
   .row-heading h3 { font-size: 13px; }
-  .carousel-controls { gap: 4px; }
-  .carousel-controls button { min-width: 32px; padding-inline: 6px; }
-  .carousel-controls .motion-toggle { min-width: 65px; }
   .project-card { padding: 23px; }
   .interest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .interest-card { padding: 20px 16px; }

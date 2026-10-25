@@ -8,7 +8,7 @@ Implementation date: 25 October 2026. The supplied replacement specification is 
 - **Chirper feature specifics:** exact posting, commenting and liking functionality is not established by the supplied facts. The card retains only the supplied social-app and authentication/API descriptions.
 - **REKA identity:** stays in the biography. Its product URL and logo have not been established, so it is absent from the toolkit.
 - **LinkedIn:** automated requests returned HTTP 999. Manually open the supplied profile URL before launch. Email is preserved exactly; mailbox delivery/ownership is not tested and no email was sent.
-- **Brand gaps:** JavaScript has no single official language logo; Shelf has no verified independent package logo. Gemini API and WhatsApp Cloud API have verified destinations but no verified API-specific mark. These four use text-only name tiles. See `ASSET_SOURCES.md`.
+- **Brand gaps:** Shelf has no verified independent package logo. Gemini API and WhatsApp Cloud API have verified destinations but no verified API-specific mark. These three use text-only name tiles. JavaScript uses the original yellow community mark, not an official language logo; Java uses Oracle's cup mark. See `ASSET_SOURCES.md`.
 - **Optional social preview:** no real image was supplied. Metadata deliberately omits `og:image` rather than referencing a missing asset or an invented app screenshot.
 
 ## Resolved repository inputs

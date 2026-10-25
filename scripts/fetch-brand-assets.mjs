@@ -20,7 +20,8 @@ await mkdir('docs',{recursive:true});
 await writeFile('docs/asset-verification.json',JSON.stringify({...verification, checkedOn, destinations:output},null,2));
 } else {
  const assets = [
- ['java','https://www.java.com/jcom/images/java-logo.png','Oracle; official Java site logo'],
+ ['java','https://www.oracle.com/a/ocom/img/obic-java-cup.svg','Oracle; official Java coffee-cup logo'],
+ ['javascript','https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.svg','Christopher Williams and Manuel Strehl; MIT; community JavaScript logo'],
  ['python','https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png','Python Software Foundation; https://www.python.org/community/logos/'],
  ['cpp','https://isocpp.org/assets/images/cpp_logo.png','Standard C++ Foundation'],
  ['typescript','https://www.typescriptlang.org/icons/icon-144x144.png','Microsoft; https://www.typescriptlang.org/branding/'],

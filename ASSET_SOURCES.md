@@ -1,12 +1,13 @@
 # Brand assets and destination verification
 
-Checked 25 October 2026. Assets are stored locally in `public/icons/brands/`; there is no runtime hotlinking. Every included brand image was downloaded from its official website, its official asset CDN, or its official source repository. No Simple Icons or other community logo collection is used. Images retain their source shapes, proportions and colors. Raster files are official publisher assets, not traced replacements.
+Checked 25 October 2026. Assets are stored locally in `public/icons/brands/`; there is no runtime hotlinking. Brand images come from their official websites, asset CDNs or source repositories, except the explicitly identified JavaScript community mark, obtained from its original creator's repository. No Simple Icons or other logo collection is used. Images retain their source shapes, proportions and colors.
 
 These marks identify linked tools and services; they do not imply endorsement. Copyright and trademarks remain with their respective owners. Download availability is not a blanket trademark license. Follow the linked brand guidance when reusing this site for a different purpose. Decorative images have empty alt text beside visible names. The site must use `object-fit: contain`, preserve intrinsic proportions and avoid filters that recolor brand marks.
 
 | Local file | Exact official source | Attribution / usage reference |
 | --- | --- | --- |
-| java.png | https://www.java.com/jcom/images/java-logo.png | Oracle; official Java homepage's Duke mascot asset (not a newly drawn coffee-cup logo) |
+| java.svg | https://www.oracle.com/a/ocom/img/obic-java-cup.svg | Oracle; official coffee-cup logo; https://www.oracle.com/a/ocom/docs/java-licensing-logo-guidelines-1908204.pdf |
+| javascript.svg | https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.svg | Christopher Williams and Manuel Strehl; MIT; community mark, not an official language logo. License retained in SVG and `docs/javascript-logo-license.txt`. |
 | python.png | https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png | Python Software Foundation; linked by https://www.python.org/community/logos/ (permits the device without wordmark) |
 | cpp.png | https://isocpp.org/assets/images/cpp_logo.png | Standard C++ Foundation; official website logo |
 | typescript.png | https://www.typescriptlang.org/icons/icon-144x144.png | Microsoft; https://www.typescriptlang.org/branding/ |
@@ -35,9 +36,9 @@ These marks identify linked tools and services; they do not imply endorsement. C
 | astro.svg | https://astro.build/favicon.svg | Astro; official website icon, for footer credit only |
 | linkedin.png | https://static.licdn.com/scds/common/u/images/logos/linkedin/logo-in-win8-tile-144_v1.png | LinkedIn; tile referenced by https://brand.linkedin.com/ |
 
-## Honest text fallbacks
+## Fallbacks and community marks
 
-- **JavaScript:** no single official language logo. Use a text name tile; MDN is the documentation destination, not the language's brand owner. No MDN logo is substituted.
+- **JavaScript:** no single official language logo. The familiar yellow JS community mark is now used, accurately marked `community` in the typed registry. Its creator calls it a community logo: https://github.com/voodootikigod/logo.js. MDN remains the documentation destination, not the brand owner.
 - **Dart Shelf:** its official package page does not provide a standalone package logo. Do not substitute the Dart or pub.dev logo.
 - **Gemini API:** the official destination was verified, but a standalone API-specific downloadable asset was not verified. Use text rather than the Google AI for Developers or Gemini consumer-app mark.
 - **WhatsApp Cloud API:** Meta's official documentation was verified, but an API-specific downloadable logo was not verified. Use text rather than a Facebook favicon or an invented API badge.

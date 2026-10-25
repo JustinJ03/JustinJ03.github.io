@@ -258,13 +258,6 @@
       "sha256": "aaefddf5fb6fb27b69945bb1c3d4452fc06923d6f68396fac5f786c3a12487ac"
     },
     {
-      "id": "java",
-      "filename": "java.png",
-      "source": "https://www.java.com/jcom/images/java-logo.png",
-      "attribution": "Oracle; official Java site logo",
-      "sha256": "902e82a4914e37cc01fc942392f355f2daa53cee4a88fab27f84718f6bbc347b"
-    },
-    {
       "id": "jquery",
       "filename": "jquery.gif",
       "source": "https://brand.jquery.org/resources/jquery-mark-light.gif",
@@ -397,6 +390,21 @@
       "archiveEntry": "brand-assets/supabase-logo-icon.svg",
       "attribution": "Supabase; https://supabase.com/brand-assets",
       "sha256": "eb9ffcd100ad26228a578100ba7cbfc5b383e4995338d122abdc6a3b4d210ed3"
+    },
+    {
+      "id": "java",
+      "filename": "java.svg",
+      "source": "https://www.oracle.com/a/ocom/img/obic-java-cup.svg",
+      "attribution": "Oracle; official Java coffee-cup logo",
+      "sha256": "ec06fc3dbabc073507a8b90b93a284389256919ed1983483e76a0099de099d1f"
+    },
+    {
+      "id": "javascript",
+      "filename": "javascript.svg",
+      "source": "https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.svg",
+      "attribution": "Christopher Williams and Manuel Strehl; MIT; community JavaScript logo",
+      "kind": "community",
+      "sha256": "a70a3d8d36ea6b0e614a04ec30d5a4fb2bf36d515492cb84050ded2b84d14393"
     }
   ]
 }
