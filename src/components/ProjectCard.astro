@@ -2,10 +2,11 @@
 import type { Project } from '../data/projects';
 import { path, httpsUrl } from '../utils/paths';
 import ProjectArt from './ProjectArt.astro';
+import ToolIcon from './ToolIcon.astro';
 interface Props { project: Project; index: number; }
 const { project, index } = Astro.props;
 ---
-<article class="project-card panel">
+<article class="project-card panel" data-tilt data-project-status={project.status}>
   <div class="window-bar"><span>{String(index + 1).padStart(2, '0')} / {project.category}</span><span aria-hidden="true">↗</span></div>
   <figure class="project-cover">
     {project.image ? <img src={path(project.image.src)} alt={project.image.alt} width="640" height="360" loading="lazy" /> : <ProjectArt category={project.category} slug={project.slug} />}
@@ -13,7 +14,7 @@ const { project, index } = Astro.props;
   </figure>
   <div class="project-body">
     <p class="status">{project.statusLabel}</p><h3>{project.title}</h3><p class="project-subtitle">{project.subtitle}</p><p>{project.summary}</p>
-    <ul class="tags" aria-label="Technologies">{project.technologies.map(item => <li>{item}</li>)}</ul>
+    <ul class="tags" aria-label="Technologies">{project.technologies.map(item => <li><ToolIcon name={item} />{item}</li>)}</ul>
     <a class="text-link project-link" href={path(`projects/${project.slug}/`)}>Read project <span class="sr-only">: {project.title}</span><span aria-hidden="true">↗</span></a>
     {(httpsUrl(project.repoUrl) || httpsUrl(project.demoUrl)) && <div class="flex flex-wrap gap-4">{httpsUrl(project.repoUrl) && <a href={httpsUrl(project.repoUrl)}>Repository</a>}{httpsUrl(project.demoUrl) && <a href={httpsUrl(project.demoUrl)}>Live demo</a>}</div>}
   </div>

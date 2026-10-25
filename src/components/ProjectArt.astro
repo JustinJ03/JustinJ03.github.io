@@ -3,7 +3,8 @@ interface Props { category: string; slug?: string; }
 const { category, slug } = Astro.props;
 ---
 <svg viewBox="0 0 320 180" fill="none" aria-hidden="true" class="project-art">
-  <circle cx="160" cy="90" r="63" fill="var(--sun)" opacity=".65" />
+  <path d="M0 30h320M0 60h320M0 90h320M0 120h320M0 150h320M40 0v180M80 0v180M120 0v180M160 0v180M200 0v180M240 0v180M280 0v180" stroke="currentColor" opacity=".08" />
+  <path d="m160 22 68 39v78l-68 39-68-39V61Z" stroke="var(--sun)" opacity=".5" />
   <g stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   {slug === 'chirper' ? <>
     <path d="M91 47h116v65h-66l-24 19v-19H91Z" fill="var(--surface)"/><path d="M111 67h72m-72 15h51"/>
@@ -15,8 +16,10 @@ const { category, slug } = Astro.props;
     <path d="M99 124V56h91v68z" fill="var(--surface)"/><path d="M99 72h91m-78-8h2m7 0h2m7 0h2"/>
     <path d="M132 93h88v54h-88z" fill="var(--sage)"/><path d="m145 132 17-18 18 9 23-20m-10 0h10v10"/>
     <path d="M76 148h167M210 58v20m-10-10h20"/>
+  </> : category === 'mobile' ? <>
+    <rect x="130" y="33" width="63" height="116" rx="4" fill="var(--surface)"/><path d="M143 43h37m-39 11h41v75h-41zm12 86h16m-29-57h44m-30-15v30"/><path d="M210 71h15v43h-15m-95-43h-15v43h15"/>
   </> : <>
-    <path d="M160 145V55m0 61c-39 0-49-21-44-38 32 0 45 16 44 38Zm0-27c33 0 45-18 41-35-29 0-41 14-41 35Z" fill="var(--sage)"/><path d="M130 145h60m-48 8h36"/>
+    <path d="M136 66h48v48h-48z" fill="var(--surface)"/><path d="M149 80h22v20h-22zM160 66V42m0 72v25m-24-49h-25m73 0h25M137 67l-18-18m65 18 18-18m-65 65-18 18m65-18 18 18"/><circle cx="160" cy="37" r="5"/><circle cx="160" cy="144" r="5"/><circle cx="106" cy="90" r="5"/><circle cx="214" cy="90" r="5"/>
   </>}
   <path d="M60 56h16m-8-8v16m172 59h16m-8-8v16"/><circle cx="238" cy="47" r="4"/>
   </g>

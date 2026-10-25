@@ -1,6 +1,17 @@
-# Justin Joel · Digital Greenhouse
+# Justin Joel · Personal Arcade
 
-A static Astro portfolio with a retro–solarpunk theme, original SVG illustrations, typed content, six project detail pages, and a useful 404 page. Three resume-backed projects are featured; newer learning projects and concepts are explicitly separated. No backend, trackers, external fonts, or frontend framework runtime.
+A static Astro site with a retro video-game / cyberpunk theme, an animated original SVG city, typed content, six project detail pages, and a playable side quest. Projects and play come first; experience and education are in expandable player-profile panels. Three resume-backed projects remain distinct from newer learning projects and concepts. No backend, trackers, external fonts, or frontend framework runtime.
+
+## Interactive features
+
+- Mission-select filters: built projects, explorations, or all six. Without JavaScript all projects remain visible.
+- Project and interest cards tilt with a mouse and highlight on keyboard focus. Tool tiles lift and show an inspection readout when selected.
+- Local SVG icons identify tools. Simple Icons supplies available brand marks; general code symbols cover non-brand practices/platforms and unavailable marks. Some ecosystem tools use their parent framework icon. Text labels always identify the actual tool. See [icon attribution](THIRD_PARTY_NOTICES.md).
+- **Signal Run:** a small 8×6 packet-collection game. Start a run, then use arrow keys/WASD while the grid is focused, or the touch direction buttons. Collect five packets, view the move count, and restart. There is no timer, audio, network, or persistent score.
+- Footer controls switch cyan/pink/amber accents and turn motion off. System reduced-motion preferences also disable animation and tilt. Display settings reset on page navigation.
+- Native disclosures keep education, experience, strengths, and experimental tools readable with or without JavaScript.
+
+Interaction code lives in `src/scripts/interface.ts`; the game is self-contained in `src/components/Arcade.astro`. Theme and responsive styles live in `src/styles/global.css`.
 
 ## Local setup
 
@@ -35,7 +46,7 @@ That runtime is not part of the repository. Other checkouts should install the N
 | `src/data/interests.ts` | Interests and working strengths |
 | `src/styles/global.css` | Theme tokens, typography, responsive layouts, focus and motion styles |
 
-Add one typed project entry to create its internal page automatically. `featured: true` adds it to selected work; `false` adds it to explorations. Use a unique lowercase slug. Retain `null` for unavailable links. Only supplied HTTPS repository/demo URLs render external actions. There is no placeholder resume link or contact form: email, LinkedIn, and GitHub are direct links.
+Add one typed project entry to create its internal page automatically. The mission filters use `status: 'built'`, `'learning'`, or `'planned'`; `featured` controls detail-page presentation and the return link. Keep `featured: true` for demonstrated work and `false` for explorations. Use a unique lowercase slug. Retain `null` for unavailable links. Only supplied HTTPS repository/demo URLs render external actions. There is no placeholder resume link or contact form: email, LinkedIn, and GitHub are direct links.
 
 Place permission-cleared project screenshots in `public/images/`, then set `image` to `{ src: 'images/example.png', alt: 'A descriptive caption', kind: 'screenshot' }`. Use a 16:9 image to match the supplied dimensions. The default SVG covers are clearly labeled illustrations.
 
@@ -61,11 +72,12 @@ The browser check uses installed Chrome through Playwright, with axe WCAG A/AA c
 Verified locally on 25 October 2026:
 
 - Clean `npm ci`, Astro type checking, and production build.
-- Eight generated pages and 101 local links/assets, plus Open Graph image existence.
+- Eight generated pages and 102 local links/assets, plus Open Graph image existence.
 - Root and `/portfolio/` base modes, including production preview and all six project routes.
 - Chrome at 320, 375, 768, and 1440px: no horizontal page overflow; no axe WCAG A/AA violations in the tested views.
 - Mobile menu keyboard operation, Escape and focus return, skip link, no-JavaScript navigation, reduced-motion behavior, 200% CSS zoom, and 404 home link.
 - No JavaScript errors or failed asset requests during those browser checks.
+- Project filters, mouse tilt, tool selection/icons, expandable profile panels, all three neon palettes, motion toggle, and a full 28-move arcade completion plus reset/boundary checks.
 
 Automated accessibility checks are not a complete manual assistive-technology audit. CSS zoom was tested, not the browser’s native zoom UI. Lighthouse scores, mail delivery, contact account ownership, and live GitHub Pages deployment have not been verified.
 

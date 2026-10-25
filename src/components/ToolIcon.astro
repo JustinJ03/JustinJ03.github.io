@@ -1,0 +1,10 @@
+---
+import * as brandIcons from 'simple-icons';
+interface Props { name: string; }
+const { name } = Astro.props;
+const names: Record<string, string> = {
+  Python:'siPython', 'C++':'siCplusplus', JavaScript:'siJavascript', TypeScript:'siTypescript', Dart:'siDart', PHP:'siPhp', HTML:'siHtml5', CSS:'siCss', Blade:'siLaravel', Laravel:'siLaravel', 'Laravel 11':'siLaravel', 'Next.js':'siNextdotjs', Flutter:'siFlutter', Bootstrap:'siBootstrap', 'Tailwind CSS':'siTailwindcss', NativeWind:'siTailwindcss', jQuery:'siJquery', MySQL:'siMysql', SQLite:'siSqlite', Git:'siGit', GitHub:'siGithub', 'Git Bash':'siGnubash', Docker:'siDocker', Laragon:'siLaragon', XAMPP:'siXampp', Nginx:'siNginx', PostgreSQL:'siPostgresql', Supabase:'siSupabase', Riverpod:'siFlutter', 'React Native':'siReact', 'Gemini API':'siGooglegemini', 'WhatsApp Cloud API':'siWhatsapp',
+};
+const icon = (brandIcons as unknown as Record<string, { path: string }>)[names[name] ?? ''];
+---
+<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="tool-icon">{icon ? <path d={icon.path} /> : <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-16-2 20"/></g>}</svg>

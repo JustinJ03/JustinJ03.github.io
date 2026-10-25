@@ -1,43 +1,43 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greenhouse from '../components/Greenhouse.astro';
+import CityScene from '../components/CityScene.astro';
+import Arcade from '../components/Arcade.astro';
+import ToolIcon from '../components/ToolIcon.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { profile } from '../data/profile';
 import { projects } from '../data/projects';
 import { skills, exploring } from '../data/skills';
 import { interests, strengths } from '../data/interests';
-import { path } from '../utils/paths';
 ---
 <BaseLayout>
   <section class="container hero" aria-labelledby="welcome">
-    <div><p class="eyebrow hero-eyebrow">{profile.eyebrow}</p><h1 id="welcome">Hi, I’m<br /><span>{profile.name}.</span></h1><p class="hero-role">{profile.role}</p><p class="hero-intro">{profile.intro}</p><div class="hero-actions flex flex-wrap gap-4"><a class="button primary" href="#projects">Explore my projects <span aria-hidden="true">↗</span></a><a class="button" href="#contact">Let’s connect</a></div><p class="hero-note"><span aria-hidden="true">✳</span> Practical problems. Thoughtful software.</p></div>
-    <Greenhouse />
+    <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> PLAYER ONE HAS ENTERED THE CHAT</p><h1 id="welcome">JUSTIN<br /><span>JOEL<span class="title-cursor" aria-hidden="true">_</span></span></h1><p class="hero-role">DEVELOPER. BUILDER. CURIOUS HUMAN.</p><p class="hero-intro">Welcome to my corner of the internet. I build web apps, explore mobile worlds, and turn “what if?” into something you can click.</p><div class="hero-actions"><a class="button primary" href="#projects"><span aria-hidden="true">▷</span> Explore projects</a><a class="button" href="#arcade">Play a side quest <span aria-hidden="true">↗</span></a></div><div class="player-tag"><span class="pixel-avatar" aria-hidden="true">✛</span><span><strong>{profile.name}</strong><small>Software Engineering @ UNIMAS</small></span><span class="player-id" aria-hidden="true">P1</span></div></div>
+    <CityScene />
   </section>
-  <div class="field-strip"><div class="container flex flex-wrap justify-between gap-3"><span>THE DIGITAL GREENHOUSE</span><span>Code, cultivate, keep learning.</span><span aria-hidden="true">WEB / MOBILE / EXPLORATION</span></div></div>
-  <section id="about" class="container section">
-    <SectionHeading number="01" label="a little background" title="Rooted in practical work." />
-    <div class="about-grid"><div class="biography">{profile.biography.map(paragraph => <p>{paragraph}</p>)}<div class="education"><h3>Education</h3>{profile.education.map(item => <div><p class="eyebrow">{item.dates}</p><h4>{item.qualification}</h4><p>{item.institution}</p></div>)}<p class="credential"><strong>Additional learning:</strong> {profile.credentials.join(' · ')}</p></div></div>
-    <div class="experience"><h3 class="eyebrow">Experience / field notes</h3>{profile.experience.map(item => <article><p class="eyebrow">{item.dates}</p><h4>{item.role}</h4><p class="organization">{item.organization}</p><p>{item.description}</p></article>)}</div></div>
+  <div class="ticker"><div class="container"><span>BUILD / BREAK / LEARN / REPEAT</span><span aria-hidden="true">✦</span><span>WEB + MOBILE + WHAT’S NEXT</span><span aria-hidden="true">✦</span><span>SELECT YOUR NEXT ADVENTURE ↓</span></div></div>
+  <section id="projects" class="container section">
+    <div id="explorations" class="anchor-target"></div>
+    <SectionHeading number="01" label="mission select" title="Choose your next click."><p>Things I’ve built. Things I’m figuring out. Open a project to look under the hood.</p></SectionHeading>
+    <div class="gallery-toolbar"><div class="project-filters" role="group" aria-label="Filter projects" hidden><button data-filter="built" aria-pressed="true">Built projects</button><button data-filter="exploring" aria-pressed="false">Explorations</button><button data-filter="all" aria-pressed="false">All projects</button></div><p id="project-count" role="status">06 projects to explore</p></div>
+    <div class="project-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} />)}</div>
+    <div class="gallery-footer"><p>Explorations are learning projects and concepts, with completion and outcomes unverified.</p><a class="text-link" href={profile.contacts.find(c => c.label === 'GitHub')!.href}>More on GitHub <span aria-hidden="true">↗</span></a></div>
   </section>
-  <section id="projects" class="section project-section"><div class="container">
-    <SectionHeading number="02" label="selected_work" title="Built with purpose."><p>From everyday finances to shared learning. A selection of projects I’ve worked on.</p></SectionHeading>
-    <div class="project-grid">{projects.filter(project => project.featured).map((project, index) => <ProjectCard project={project} index={index} />)}</div>
-    <div class="gallery-footer"><span class="eyebrow">Web applications & desktop software</span><a class="text-link" href={profile.contacts.find(c => c.label === 'GitHub')!.href}>More on GitHub <span aria-hidden="true">↗</span></a></div>
+  <section id="skills" class="section loadout-section"><div class="container">
+    <SectionHeading number="02" label="equipment inventory" title="Pick your loadout."><p>Tools I’ve worked with to build, debug, and connect things. Select an item to inspect it.</p></SectionHeading>
+    <div class="skills-grid">{skills.map((group, index) => <div class="skill-group"><h3><span>{String(index + 1).padStart(2, '0')} /</span> {group.title}</h3><ul class="tool-list">{group.items.map(item => <li><button class="tool-tile" data-tool={item} data-group={group.title} aria-pressed="false"><ToolIcon name={item} /><span>{item}</span><span class="tool-corner" aria-hidden="true">+</span></button></li>)}</ul></div>)}</div>
+    <p id="tool-readout" class="tool-readout" role="status" hidden>Select a tool to inspect your loadout.</p>
+    <details class="exploring-tools"><summary>Experimental inventory <span>Currently exploring ↓</span></summary><p>Learning and experimentation, separate from the work above.</p><ul class="tool-list">{exploring.map(item => <li><button class="tool-tile" data-tool={item} data-group="Experimental inventory" data-exploring="true" aria-pressed="false"><ToolIcon name={item} /><span>{item}</span></button></li>)}</ul></details>
   </div></section>
-  <section id="skills" class="container section">
-    <SectionHeading number="03" label="the tool shed" title="Tools I’ve worked with."><p>Used across coursework, projects, and development work. Each one brings a different kind of experience.</p></SectionHeading>
-    <div class="skills-grid">{skills.map((group, index) => <div class="skill-group"><span class="skill-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h3>{group.title}</h3><ul class="tags">{group.items.map(item => <li>{item}</li>)}</ul></div>)}</div>
-    <aside class="exploring-tools"><h3><span aria-hidden="true">✳</span> Currently exploring</h3><p>Learning and experimentation, separate from the work above.</p><ul class="tags">{exploring.map(item => <li>{item}</li>)}</ul></aside>
-  </section>
-  <section class="container section explorations" id="explorations">
-    <SectionHeading number="04" label="in the nursery" title="Ideas taking root."><p>Learning projects, prototypes, and concepts. These are explorations, with completion and outcomes still unverified.</p></SectionHeading>
-    <div class="exploration-grid">{projects.filter(project => !project.featured).map(project => <article><p class:list={['status', { 'planned': project.status === 'planned' }]}>{project.statusLabel}</p><h3>{project.title}</h3><p>{project.summary}</p><a class="text-link" href={path(`projects/${project.slug}/`)}>Read project <span class="sr-only">: {project.title}</span><span aria-hidden="true">↗</span></a></article>)}</div>
-  </section>
-  <section id="beyond-code" class="section beyond-section"><div class="container">
-    <SectionHeading number="05" label="beyond_the_keyboard" title="Room for other things."><p>Outside coding, I’m interested in strength training, matcha, home labs, and practical ways technology can support growing things.</p></SectionHeading>
-    <div class="beyond-grid"><div class="interest-grid">{interests.map((interest, index) => <article><span class="interest-symbol" aria-hidden="true">{['↟', '◒', '⌘', '✳'][index]}</span><h3>{interest.title}</h3><p>{interest.description}</p></article>)}</div><aside class="panel strengths"><div class="window-bar">how_i_work.txt</div><div class="panel-content"><h3>Working strengths</h3><dl>{strengths.map(strength => <div><dt>{strength.title}</dt><dd>{strength.description}</dd></div>)}</dl></div></aside></div>
-    <div class="languages"><h3>Spoken languages</h3><ul>{profile.languages.map(language => <li><strong>{language.name}</strong><span>{language.level}</span></li>)}</ul></div>
+  <Arcade />
+  <section id="about" class="section about-section"><div class="container about-grid">
+    <div><SectionHeading number="04" label="player profile" title="Meet the human behind the handle." /><p class="profile-intro">{profile.intro}</p><a class="text-link" href="#contact">Open a conversation <span aria-hidden="true">↗</span></a></div>
+    <div class="profile-console panel"><div class="window-bar"><span>PLAYER_PROFILE.DAT</span><span aria-hidden="true">[ JJ ]</span></div><div class="panel-content"><p class="eyebrow">{profile.fullName}</p><h3>Always learning.<br />Always building.</h3><p>{profile.biography[1]}</p><details><summary>Experience log</summary><div class="experience">{profile.experience.map(item => <article><p class="eyebrow">{item.dates}</p><h4>{item.role}</h4><p class="organization">{item.organization}</p><p>{item.description}</p></article>)}</div></details><details><summary>Education & additional learning</summary><div class="education">{profile.education.map(item => <article><p class="eyebrow">{item.dates}</p><h4>{item.qualification}</h4><p>{item.institution}</p></article>)}<p>{profile.credentials.join(' · ')}</p></div></details><details><summary>How I work</summary><dl class="strengths">{strengths.map(item => <div><dt>{item.title}</dt><dd>{item.description}</dd></div>)}</dl></details></div></div>
   </div></section>
-  <section id="contact" class="container section"><div class="contact-panel panel"><div class="window-bar"><span>06 / open a conversation</span><span aria-hidden="true">✳</span></div><div class="contact-content"><div><p class="eyebrow">Good things start with a hello.</p><h2>Let’s build<br />something useful.</h2><p>Interested in my work or have a project to discuss? You can reach me by email or connect with me on LinkedIn and GitHub.</p></div><div class="contact-links">{profile.contacts.map(contact => <a href={contact.href}><span><span class="eyebrow">{contact.label}</span><strong>{contact.value}</strong></span><span aria-hidden="true">↗</span></a>)}</div></div></div></section>
+  <section id="beyond-code" class="container section">
+    <SectionHeading number="05" label="off-duty mode" title="Not always at the keyboard."><p>A few interests from the other tabs in my life.</p></SectionHeading>
+    <div class="interest-grid">{interests.map((interest,index) => <article class="interest-card" data-tilt><span class="interest-symbol" aria-hidden="true">{['↟', '◒', '⌘', '✳'][index]}</span><p class="eyebrow">SIDE INTEREST / 0{index + 1}</p><h3>{interest.title}</h3><p>{interest.description}</p></article>)}</div>
+    <div class="languages"><h3>Language pack</h3><ul>{profile.languages.map(language => <li><strong>{language.name}</strong><span>{language.level}</span></li>)}</ul></div>
+  </section>
+  <section id="contact" class="container section contact-section"><div class="contact-panel panel"><div class="window-bar"><span>06 / OPEN COMMS</span><span aria-hidden="true">↗</span></div><div class="contact-content"><div><p class="eyebrow">CO-OP STARTS WITH A HELLO.</p><h2>Got an idea?<br /><span>Let’s build it.</span></h2><p>Interested in my work or have a project to discuss? Send an email or find me around the internet.</p></div><div class="contact-links">{profile.contacts.map(contact => <a href={contact.href}><span><span class="eyebrow">{contact.label}</span><strong>{contact.value}</strong></span><span aria-hidden="true">↗</span></a>)}</div></div></div></section>
 </BaseLayout>

@@ -1,12 +1,12 @@
 ---
 import { path } from '../utils/paths';
 import { profile } from '../data/profile';
-const navigation = [['About', 'about'], ['Projects', 'projects'], ['Skills', 'skills'], ['Beyond Code', 'beyond-code'], ['Contact', 'contact']];
+const navigation = [['Projects', 'projects'], ['Loadout', 'skills'], ['Arcade', 'arcade'], ['Player', 'about'], ['Contact', 'contact']];
 ---
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a class="brand" href={path()} aria-label={`${profile.name}, home`}><span class="brand-mark" aria-hidden="true">j<span>j</span>.</span><span>{profile.name}<small> / Portfolio</small></span></a>
+    <a class="brand" href={path()} aria-label={`${profile.name}, home`}><span class="brand-mark" aria-hidden="true">JJ</span><span>JUSTIN JOEL<small> / PERSONAL ARCADE</small></span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menu <span aria-hidden="true">☰</span></button>
     <nav id="navigation" aria-label="Main navigation">{navigation.map(([label, id]) => <a href={path(`#${id}`)}>{label}</a>)}</nav>
   </div>
