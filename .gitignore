@@ -1,8 +1,8 @@
 node_modules/
 dist/
 .astro/
-.tools/
-.qa/
+test-results/
+playwright-report/
 .env
 .env.*
 !.env.example

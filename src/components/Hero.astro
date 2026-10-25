@@ -1,0 +1,11 @@
+---
+import { profile } from '../data/profile';
+---
+<section class="hero" aria-labelledby="hello-heading">
+  <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>{profile.eyebrow}</p>
+  <h1 id="hello-heading">{profile.heading.slice(0, profile.heading.lastIndexOf(' ') + 1)}<span>{profile.heading.slice(profile.heading.lastIndexOf(' ') + 1)}</span></h1>
+  <p class="hero-role">{profile.role}</p>
+  <div class="hero-copy"><p>{profile.welcome}</p></div>
+  <a class="button primary" href="#projects">See what I've been building <span aria-hidden="true">↗</span></a>
+  <div class="background-note"><span class="eyebrow">A LITTLE BACKGROUND</span><p>{profile.background}</p></div>
+</section>

@@ -1,0 +1,16 @@
+---
+import { interests } from '../data/interests';
+import { profile } from '../data/profile';
+const paths = {
+  training: 'M6 6v12M3 9v6M18 6v12M21 9v6M6 12h12',
+  matcha: 'M4 8h13v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 2v3',
+  server: 'M4 3h16v7H4zM4 14h16v7H4zM7 6h1M7 17h1M12 6h5M12 17h5',
+  leaf: 'M20 3C9 2 3 6 5 14s13 7 15-11ZM4 21 15 10M10 15v-5M10 15h5',
+};
+---
+<section class="section interests" aria-labelledby="interests-heading">
+  <div class="section-heading"><p class="eyebrow">BEYOND THE CODE</p><h2 id="interests-heading">A little more about me<span class="accent">.</span></h2></div>
+  <div class="interest-grid">{interests.map((interest) => <article class="interest-card"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d={paths[interest.icon]} /></svg><h3>{interest.name}</h3><p>{interest.description}</p></article>)}</div>
+  <p class="strengths">{profile.strengths}</p>
+  <p class="spoken-languages"><span>Also speaking</span> {profile.languages}</p>
+</section>

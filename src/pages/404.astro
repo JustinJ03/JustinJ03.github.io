@@ -1,5 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { path } from '../utils/paths';
+import { withBase } from '../utils/paths';
 ---
-<BaseLayout title="Page not found — Justin Joel" noindex><section class="container section not-found"><p class="eyebrow">ERROR 404 / OUTSIDE THE MAP</p><h1>Wrong warp.<br /><span>Try again?</span></h1><p>This page may have moved, or the address may be incorrect.</p><a class="button primary" href={path()}>Back to the arcade ↗</a></section></BaseLayout>
+<BaseLayout title="Page not found — Justin Joel" noindex><section class="hero not-found"><p class="eyebrow">404 · A SMALL DETOUR</p><h1>This page wandered off.</h1><p>Let's get you back to the projects and ideas.</p><a class="button primary" href={withBase()}>Back to Justin's page <span aria-hidden="true">↗</span></a></section></BaseLayout>

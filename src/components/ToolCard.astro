@@ -1,0 +1,7 @@
+---
+import type { Tool } from '../data/tools';
+import ToolIcon from './ToolIcon.astro';
+interface Props { tool: Tool }
+const { tool } = Astro.props;
+---
+<li><a class="tool-card" href={tool.url} draggable="false"><ToolIcon tool={tool} /><span class="tool-name">{tool.name}</span><span class="tool-description">{tool.description}</span><span class="tool-arrow" aria-hidden="true">↗</span></a></li>

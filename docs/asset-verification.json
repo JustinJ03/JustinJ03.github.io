@@ -1,0 +1,402 @@
+{
+  "checkedOn": "2026-10-25",
+  "destinations": [
+    {
+      "id": "python",
+      "url": "https://www.python.org/",
+      "status": 200,
+      "finalUrl": "https://www.python.org/"
+    },
+    {
+      "id": "javascript",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+      "id": "dart",
+      "url": "https://dart.dev/",
+      "status": 200,
+      "finalUrl": "https://dart.dev/"
+    },
+    {
+      "id": "typescript",
+      "url": "https://www.typescriptlang.org/",
+      "status": 200,
+      "finalUrl": "https://www.typescriptlang.org/"
+    },
+    {
+      "id": "java",
+      "url": "https://www.java.com/",
+      "status": 200,
+      "finalUrl": "https://www.java.com/en/"
+    },
+    {
+      "id": "php",
+      "url": "https://www.php.net/",
+      "status": 200,
+      "finalUrl": "https://www.php.net/"
+    },
+    {
+      "id": "laravel",
+      "url": "https://laravel.com/",
+      "status": 200,
+      "finalUrl": "https://laravel.com/"
+    },
+    {
+      "id": "cpp",
+      "url": "https://isocpp.org/",
+      "status": 200,
+      "finalUrl": "https://isocpp.org/"
+    },
+    {
+      "id": "nextjs",
+      "url": "https://nextjs.org/",
+      "status": 200,
+      "finalUrl": "https://nextjs.org/"
+    },
+    {
+      "id": "tailwind",
+      "url": "https://tailwindcss.com/",
+      "status": 200,
+      "finalUrl": "https://tailwindcss.com/"
+    },
+    {
+      "id": "nativewind",
+      "url": "https://www.nativewind.dev/",
+      "status": 200,
+      "finalUrl": "https://www.nativewind.dev/"
+    },
+    {
+      "id": "bootstrap",
+      "url": "https://getbootstrap.com/",
+      "status": 200,
+      "finalUrl": "https://getbootstrap.com/"
+    },
+    {
+      "id": "flutter",
+      "url": "https://flutter.dev/",
+      "status": 200,
+      "finalUrl": "https://flutter.dev/"
+    },
+    {
+      "id": "jquery",
+      "url": "https://jquery.com/",
+      "status": 200,
+      "finalUrl": "https://jquery.com/"
+    },
+    {
+      "id": "mysql",
+      "url": "https://www.mysql.com/",
+      "status": 200,
+      "finalUrl": "https://www.mysql.com/"
+    },
+    {
+      "id": "sqlite",
+      "url": "https://www.sqlite.org/",
+      "status": 200,
+      "finalUrl": "https://www.sqlite.org/"
+    },
+    {
+      "id": "git",
+      "url": "https://git-scm.com/",
+      "status": 200,
+      "finalUrl": "https://git-scm.com/"
+    },
+    {
+      "id": "laragon",
+      "url": "https://laragon.org/",
+      "status": 200,
+      "finalUrl": "https://laragon.org/"
+    },
+    {
+      "id": "nginx",
+      "url": "https://nginx.org/",
+      "status": 200,
+      "finalUrl": "https://nginx.org/"
+    },
+    {
+      "id": "xampp",
+      "url": "https://www.apachefriends.org/",
+      "status": 200,
+      "finalUrl": "https://www.apachefriends.org/"
+    },
+    {
+      "id": "supabase",
+      "url": "https://supabase.com/",
+      "status": 200,
+      "finalUrl": "https://supabase.com/"
+    },
+    {
+      "id": "github",
+      "url": "https://github.com/",
+      "status": 200,
+      "finalUrl": "https://github.com/"
+    },
+    {
+      "id": "postgresql",
+      "url": "https://www.postgresql.org/",
+      "status": 200,
+      "finalUrl": "https://www.postgresql.org/"
+    },
+    {
+      "id": "docker",
+      "url": "https://www.docker.com/",
+      "status": 200,
+      "finalUrl": "https://www.docker.com/"
+    },
+    {
+      "id": "riverpod",
+      "url": "https://riverpod.dev/",
+      "status": 200,
+      "finalUrl": "https://riverpod.dev/"
+    },
+    {
+      "id": "react-native",
+      "url": "https://reactnative.dev/",
+      "status": 200,
+      "finalUrl": "https://reactnative.dev/"
+    },
+    {
+      "id": "astro",
+      "url": "https://astro.build/",
+      "status": 200,
+      "finalUrl": "https://astro.build/"
+    },
+    {
+      "id": "shelf",
+      "url": "https://pub.dev/packages/shelf",
+      "status": 200,
+      "finalUrl": "https://pub.dev/packages/shelf"
+    },
+    {
+      "id": "linkedin",
+      "url": "https://www.linkedin.com/in/justin-joel-925819247",
+      "status": 999,
+      "finalUrl": "https://www.linkedin.com/in/justin-joel-925819247"
+    },
+    {
+      "id": "gemini",
+      "url": "https://ai.google.dev/",
+      "status": 200,
+      "finalUrl": "https://ai.google.dev/?hl=de"
+    },
+    {
+      "id": "serverpod",
+      "url": "https://serverpod.dev/",
+      "status": 200,
+      "finalUrl": "https://serverpod.dev/"
+    },
+    {
+      "id": "whatsapp",
+      "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/",
+      "status": 200,
+      "finalUrl": "https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform"
+    },
+    {
+      "id": "github-profile",
+      "url": "https://github.com/JustinJ03",
+      "status": 200,
+      "finalUrl": "https://github.com/JustinJ03"
+    }
+  ],
+  "assets": [
+    {
+      "id": "astro",
+      "filename": "astro.svg",
+      "source": "https://astro.build/favicon.svg",
+      "attribution": "Astro; official site icon",
+      "sha256": "129267166125c45d49e0c954f67b709cbe9fdcc3a84f1599b835209a30bf2d40"
+    },
+    {
+      "id": "bootstrap",
+      "filename": "bootstrap.svg",
+      "source": "https://getbootstrap.com/docs/6.0/assets/brand/bootstrap-logo.svg",
+      "attribution": "Bootstrap team; https://getbootstrap.com/docs/5.3/about/brand/",
+      "sha256": "df11d37a123e36a768f2a6064973c4c6ab17d1e3c6501c8bf434ca5c0134c9a2"
+    },
+    {
+      "id": "cpp",
+      "filename": "cpp.png",
+      "source": "https://isocpp.org/assets/images/cpp_logo.png",
+      "attribution": "Standard C++ Foundation",
+      "sha256": "a1af8f6778a1d313c73a65b9c287e50379c9305cd4752fcfe4f9a729da37c58d"
+    },
+    {
+      "id": "dart",
+      "filename": "dart.svg",
+      "source": "https://dart.dev/assets/img/logo/dart-192.svg",
+      "attribution": "Google; https://dart.dev/brand",
+      "sha256": "f56021f03f95c46f1f2bcefab7de3926c82efa88a80afdd6ff797a5d3865c7a0"
+    },
+    {
+      "id": "docker",
+      "filename": "docker.png",
+      "source": "https://www.docker.com/app/uploads/2024/02/cropped-docker-logo-favicon-192x192.png",
+      "attribution": "Docker, Inc.; official site icon",
+      "sha256": "0ecc60fc860c611cbf042c65ce9137775b6f67bf795af09a7760a4acab054f37"
+    },
+    {
+      "id": "flutter",
+      "filename": "flutter.png",
+      "source": "https://flutter.dev/assets/favicon.26abda3864324ef4ac32dd0d3ce28907.png",
+      "attribution": "Google; https://flutter.dev/brand",
+      "sha256": "063ec9f0455040f12dffa931ce99f30d64c589559bd76bb7bbee4ad4a3e27921"
+    },
+    {
+      "id": "git",
+      "filename": "git.svg",
+      "source": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg",
+      "attribution": "Jason Long; CC BY 3.0 https://git-scm.com/downloads/logos",
+      "sha256": "1080a5430edb6278dc03e4b04efc16c8bed5b943408d648ad721a28836814220"
+    },
+    {
+      "id": "github",
+      "filename": "github.svg",
+      "source": "https://github.githubassets.com/favicons/favicon-dark.svg",
+      "attribution": "GitHub, Inc.; https://brand.github.com/foundations/logo",
+      "sha256": "aaefddf5fb6fb27b69945bb1c3d4452fc06923d6f68396fac5f786c3a12487ac"
+    },
+    {
+      "id": "java",
+      "filename": "java.png",
+      "source": "https://www.java.com/jcom/images/java-logo.png",
+      "attribution": "Oracle; official Java site logo",
+      "sha256": "902e82a4914e37cc01fc942392f355f2daa53cee4a88fab27f84718f6bbc347b"
+    },
+    {
+      "id": "jquery",
+      "filename": "jquery.gif",
+      "source": "https://brand.jquery.org/resources/jquery-mark-light.gif",
+      "attribution": "OpenJS Foundation; https://brand.jquery.org/logos/",
+      "sha256": "089a3179477ec3726b5d1ec46781ff232bca084f54c6c10670973f4a4806052a"
+    },
+    {
+      "id": "laragon",
+      "filename": "laragon.svg",
+      "source": "https://laragon.org/logo.svg",
+      "attribution": "Laragon; official site logo",
+      "sha256": "43364f37018ceeddf969c1236ece5b9b540420ceaeb20f2202f8b6a29a50e41b"
+    },
+    {
+      "id": "laravel",
+      "filename": "laravel.svg",
+      "source": "https://raw.githubusercontent.com/laravel/art/master/laravel-logo.svg",
+      "attribution": "Laravel; official laravel/art repository",
+      "sha256": "14beaa5ac6cb03bb6b53af2d3bdd0af4414b871bb1599c5d03a31d413d661dff"
+    },
+    {
+      "id": "linkedin",
+      "filename": "linkedin.png",
+      "source": "https://static.licdn.com/scds/common/u/images/logos/linkedin/logo-in-win8-tile-144_v1.png",
+      "attribution": "LinkedIn; official brand site tile https://brand.linkedin.com/",
+      "sha256": "71121f7faee60123a4fe142fbcb07372d7eb40dd6268428da687747082a45703"
+    },
+    {
+      "id": "mysql",
+      "filename": "mysql.png",
+      "source": "https://www.mysql.com/common/logos/logo-mysql-170x115.png",
+      "attribution": "Oracle; https://www.mysql.com/about/legal/logos.html",
+      "sha256": "2d59bc428916752528280eac03330d712164163e2f3c476409f5c25d8a7c2778"
+    },
+    {
+      "id": "nativewind",
+      "filename": "nativewind.svg",
+      "source": "https://www.nativewind.dev/favicon.svg",
+      "attribution": "NativeWind project; official site icon",
+      "sha256": "771e1b8d213ef3b5d5e936fa0763df102096c0b81b45d285dbd3db46b4c445e5"
+    },
+    {
+      "id": "nextjs",
+      "filename": "nextjs.svg",
+      "source": "https://nextjs.org/_next/static/immutable/media/logo-next-dark.0jqrwuxq05oly.svg",
+      "attribution": "Vercel; official site dark-background variant",
+      "sha256": "afd42f5d96df79b7cdadb47a403a57b1e86fb815175673abbed4a6005a853b68"
+    },
+    {
+      "id": "nginx",
+      "filename": "nginx.svg",
+      "source": "https://nginx.org/img/nginx_logo_dark.svg",
+      "attribution": "F5; official site dark-background variant",
+      "sha256": "e70d6b3a9463854c2cae793a2db84ebda97e604800dec4c3d6765ae864cf5407"
+    },
+    {
+      "id": "php",
+      "filename": "php.svg",
+      "source": "https://www.php.net/images/logos/php-logo-white.svg",
+      "attribution": "PHP project; https://www.php.net/download-logos.php",
+      "sha256": "9ab57714a8fd5da398fc3a049343e59f913446ac7cfab3876a6f16fc280a84c3"
+    },
+    {
+      "id": "postgresql",
+      "filename": "postgresql.png",
+      "source": "https://www.postgresql.org/media/img/about/press/elephant.png",
+      "attribution": "PostgreSQL Global Development Group; https://www.postgresql.org/about/press/",
+      "sha256": "ff92fb5d12a7fa6b23c2eb403d2edf4fbc58ced802021e1f02c3583cb70957be"
+    },
+    {
+      "id": "python",
+      "filename": "python.png",
+      "source": "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png",
+      "attribution": "Python Software Foundation; https://www.python.org/community/logos/",
+      "sha256": "4008a934b415c152bfa513be3e9b05de4212ae41549a27f2c6c8d41b3a24a4da"
+    },
+    {
+      "id": "react-native",
+      "filename": "react-native.svg",
+      "source": "https://reactnative.dev/img/header_logo.svg",
+      "attribution": "Meta; official React Native site logo",
+      "sha256": "69c5c70c9e616159b8a56a451881df40bf54eb93a258843ba62c5dff90c70817"
+    },
+    {
+      "id": "riverpod",
+      "filename": "riverpod.svg",
+      "source": "https://riverpod.dev/img/logo.svg",
+      "attribution": "Riverpod project; official site logo",
+      "sha256": "305e670af5e55404329bcc9aadc9d5e279294d4602938c0882f34c641cc45658"
+    },
+    {
+      "id": "serverpod",
+      "filename": "serverpod.png",
+      "source": "https://serverpod.dev/icons/favicon/apple-touch-icon@21194cf381907d0c7d24ab39e9b1daca585ca1f2.png",
+      "attribution": "Serverpod; official site icon",
+      "sha256": "a47105c876c8add05bbdc50f92ed330bb1f0b0ed42c2d94aaf4d83060080a8dc"
+    },
+    {
+      "id": "sqlite",
+      "filename": "sqlite.svg",
+      "source": "https://www.sqlite.org/images/sqlite370_banner.svg",
+      "attribution": "SQLite authors; official site wordmark",
+      "sha256": "462c4ce8229b585dd6880cd308b121d9de63eb619db05e469598594e80d7b151"
+    },
+    {
+      "id": "tailwind",
+      "filename": "tailwind.png",
+      "source": "https://tailwindcss.com/favicons/apple-touch-icon.png?v=4",
+      "attribution": "Tailwind Labs; official site icon",
+      "sha256": "52cb49a1c86b83b3e00b588b2acb18a5da48a0cfbee631cc0f42053cc32d1749"
+    },
+    {
+      "id": "typescript",
+      "filename": "typescript.png",
+      "source": "https://www.typescriptlang.org/icons/icon-144x144.png",
+      "attribution": "Microsoft; https://www.typescriptlang.org/branding/",
+      "sha256": "58cd3797bb6b8c3333cffa45be4ceb11806b0e4be8a56ce431724c848cef983f"
+    },
+    {
+      "id": "xampp",
+      "filename": "xampp.svg",
+      "source": "https://www.apachefriends.org/images/xampp-logo-ac950edf.svg",
+      "attribution": "Apache Friends; official site logo",
+      "sha256": "96e5b8b61d5bdc5e67d7746bcc72141eaca78302aec6ac86dfaaab8be9bd4053"
+    },
+    {
+      "id": "supabase",
+      "filename": "supabase.svg",
+      "source": "https://supabase.com/brand-assets.zip",
+      "archiveEntry": "brand-assets/supabase-logo-icon.svg",
+      "attribution": "Supabase; https://supabase.com/brand-assets",
+      "sha256": "eb9ffcd100ad26228a578100ba7cbfc5b383e4995338d122abdc6a3b4d210ed3"
+    }
+  ]
+}

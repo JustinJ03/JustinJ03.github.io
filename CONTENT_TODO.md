@@ -1,13 +1,27 @@
-# Content still needed
+# Content review before launch
 
-- Supply verified public repository and/or demo URLs for MyFinance, Chirper, and EduSDG. All are intentionally null; no external project actions render.
-- Supply permission-cleared screenshots with descriptive alt text. Current artwork is original illustration, labeled as such.
-- Optional: supply a public-safe resume PDF. No download action is shown. Do not include telephone numbers, academic results, or referees' details without explicit consent.
-- Review the PPPs role date after its scheduled Sep–Dec 2026 term. It is not automatically changed to “Present” or described as completed.
-- Review the expected October 2028 degree completion date when appropriate.
-- Confirm completion, backend choice, hardware, and outcomes before promoting exploratory projects to built work. Chripy is distinct from Chirper. Dart Shelf and Serverpod are separate options under exploration.
-- Confirm any public links/screenshots for explorations before adding them. Do not expose client names, client data, private code, or REKA screens.
-- Contact destinations are transcribed from the supplied brief. LinkedIn/GitHub account ownership and email delivery have not been independently verified.
-- GitHub Pages hosting is configured but not published or verified. After review and an explicit decision to publish, select GitHub Actions as the repository’s Pages source.
+Implementation date: 25 October 2026. The supplied replacement specification is the source of profile, interests and project claims. No deployment was performed.
 
-Content source: the supplied CODEX_PORTFOLIO_PLAN.md (24 October 2026), which distinguishes resume-backed work from conversation-backed exploration. The original resume was not available in this checkout.
+## Missing inputs
+
+- **Chirper repository:** no matching public Laravel/Next.js repository appeared in JustinJ03's public repository listing. Keep `repoUrl: null` until an exact URL is supplied and verified. Its footer reads “Repository link to be added.” `chripy_supabase` is a separate Flutter learning project, not a substitute.
+- **Chirper feature specifics:** exact posting, commenting and liking functionality is not established by the supplied facts. The card retains only the supplied social-app and authentication/API descriptions.
+- **REKA identity:** stays in the biography. Its product URL and logo have not been established, so it is absent from the toolkit.
+- **LinkedIn:** automated requests returned HTTP 999. Manually open the supplied profile URL before launch. Email is preserved exactly; mailbox delivery/ownership is not tested and no email was sent.
+- **Brand gaps:** JavaScript has no single official language logo; Shelf has no verified independent package logo. Gemini API and WhatsApp Cloud API have verified destinations but no verified API-specific mark. These four use text-only name tiles. See `ASSET_SOURCES.md`.
+- **Optional social preview:** no real image was supplied. Metadata deliberately omits `og:image` rather than referencing a missing asset or an invented app screenshot.
+
+## Resolved repository inputs
+
+Verified through the public GitHub API, README and source tree on 25 October 2026:
+
+- [MyFinance_MAVERIX](https://github.com/JustinJ03/MyFinance_MAVERIX): README explicitly names MyFinance and Hackathon X: FinTech Forward 2026, Laravel 11/Sanctum, Next.js, Tailwind and Docker. Source tree includes matching budget, EPF, ASB and recurring-transaction components. The portfolio retains the supplied feature scope.
+- [Java-Project](https://github.com/JustinJ03/Java-Project): README explicitly identifies EduSDG, SDG 4 and Java Swing, with 30 quiz questions, profiles and a leaderboard. Java source structure matches. The supplied “conditional timers” wording is retained; the README describes a 300-second countdown rather than detailing conditions.
+
+## Deliberately excluded
+
+Chripy, nail booking assistant, and smart irrigation project cards remain outside the initial grid. Their completion was not verified. No phone number, referee details, source résumé, skill percentages, availability claim, invented metrics or guessed repositories are published.
+
+## Human review
+
+Review the personal copy and asset terms before a future publication request. Automated Chromium/Edge tests do not replace a physical-device and screen-reader review. See `docs/VERIFICATION.md` for measured results and limits.

@@ -3,8 +3,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://justinj03.github.io',
-  base: process.env.SITE_BASE || '/',
+  base: process.env.BASE_PATH || '/',
   output: 'static',
-  trailingSlash: 'always',
   vite: { plugins: [tailwindcss()] },
+  devToolbar: { enabled: false },
 });

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#090c17"/><path d="M40 40h1120v550H40z" fill="none" stroke="#35405a" stroke-width="2"/><path d="M40 95h1120" stroke="#35405a" stroke-width="2"/>
-<text x="70" y="74" fill="#76f7db" font-family="monospace" font-size="18">JJ / PERSONAL ARCADE</text><text x="900" y="74" fill="#afb8ce" font-family="monospace" font-size="16">PLAYER ONE</text>
-<text x="85" y="255" font-family="Arial,sans-serif" font-weight="900" font-size="110" fill="#f1f1fb">JUSTIN</text><text x="85" y="365" font-family="Arial,sans-serif" font-weight="900" font-size="110" fill="#76f7db">JOEL_</text>
-<text x="90" y="430" font-family="monospace" font-size="20" fill="#ff86d3">DEVELOPER. BUILDER. CURIOUS HUMAN.</text><text x="90" y="530" font-family="monospace" font-size="17" fill="#afb8ce">BUILD / BREAK / LEARN / REPEAT</text>
-<circle cx="900" cy="250" r="110" fill="#9f5ed3"/><path d="M790 260h220m-214 20h208m-201 20h190m-172 20h154" stroke="#090c17" stroke-width="8"/>
-<path d="M710 477V340h50V300h70v177h35V370h60v107h28V280h65v197h28V360h50v117Z" fill="#141c30" stroke="#76f7db" stroke-width="2"/>
-<g stroke="#76f7db" opacity=".35"><path d="M700 480h410m-410 30h410m-410 35h410M900 480l-170 100m170-100 170 100m-170-100-50 100m50-100 50 100"/></g>
-<path d="M775 322h12v75h-12z" fill="#ff86d3"/><g fill="#76f7db"><path d="M970 300h8v16h-8zm22 0h8v16h-8zm-22 34h8v16h-8zm22 0h8v16h-8zm-22 34h8v16h-8zm22 0h8v16h-8z"/></g></svg>

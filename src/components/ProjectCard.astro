@@ -1,21 +1,23 @@
 ---
 import type { Project } from '../data/projects';
-import { path, httpsUrl } from '../utils/paths';
-import ProjectArt from './ProjectArt.astro';
+import { getTool } from '../data/tools';
 import ToolIcon from './ToolIcon.astro';
-interface Props { project: Project; index: number; }
+interface Props { project: Project; index: number }
 const { project, index } = Astro.props;
 ---
-<article class="project-card panel" data-tilt data-project-status={project.status}>
-  <div class="window-bar"><span>{String(index + 1).padStart(2, '0')} / {project.category}</span><span aria-hidden="true">↗</span></div>
-  <figure class="project-cover">
-    {project.image ? <img src={path(project.image.src)} alt={project.image.alt} width="640" height="360" loading="lazy" /> : <ProjectArt category={project.category} slug={project.slug} />}
-    <figcaption>{project.image?.kind === 'screenshot' ? 'Project screenshot' : 'Project illustration'}</figcaption>
-  </figure>
-  <div class="project-body">
-    <p class="status">{project.statusLabel}</p><h3>{project.title}</h3><p class="project-subtitle">{project.subtitle}</p><p>{project.summary}</p>
-    <ul class="tags" aria-label="Technologies">{project.technologies.map(item => <li><ToolIcon name={item} />{item}</li>)}</ul>
-    <a class="text-link project-link" href={path(`projects/${project.slug}/`)}>Read project <span class="sr-only">: {project.title}</span><span aria-hidden="true">↗</span></a>
-    {(httpsUrl(project.repoUrl) || httpsUrl(project.demoUrl)) && <div class="flex flex-wrap gap-4">{httpsUrl(project.repoUrl) && <a href={httpsUrl(project.repoUrl)}>Repository</a>}{httpsUrl(project.demoUrl) && <a href={httpsUrl(project.demoUrl)}>Live demo</a>}</div>}
-  </div>
+<article class="project-card" aria-labelledby={`project-${project.id}`}>
+  <div class="project-top"><span class:list={['badge', `badge-${project.category.toLowerCase().replaceAll(' ', '-')}`]}>{project.category}</span><span class="project-number" aria-hidden="true">0{index + 1}</span></div>
+  <h3 id={`project-${project.id}`}>{project.name}</h3>
+  <p class="project-subtitle">{project.subtitle}</p>
+  {project.context && <p class="project-context">{project.context}</p>}
+  {project.lifecycle && <p class="project-context">{project.lifecycle}</p>}
+  <p class="project-summary">{project.summary}</p>
+  <h4>What it does</h4>
+  <ul class="feature-list">{project.features.map((feature) => <li>{feature}</li>)}</ul>
+  {project.contribution && <p class="contribution">{project.contribution}</p>}
+  <div class="project-stack"><h4>Built with</h4><ul class="tool-chips" role="list">
+    {project.toolIds.map((id) => { const tool = getTool(id); return <li><a href={tool.url}><ToolIcon tool={tool} compact /><span>{project.toolLabels?.[id] || tool.name}</span></a></li>; })}
+    {project.additionalTechnologyLinks?.map((tool) => <li><a href={tool.url}>{tool.name}</a></li>)}
+  </ul></div>
+  <footer class="repository-footer">{project.repoUrl ? <a href={project.repoUrl}>View repository on GitHub <span aria-hidden="true">↗</span></a> : <span class="repo-unavailable"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12v18l-6-3-6 3zM9 7h6M9 10h4" /></svg>Repository link to be added</span>}</footer>
 </article>

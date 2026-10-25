@@ -1,43 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CityScene from '../components/CityScene.astro';
-import Arcade from '../components/Arcade.astro';
-import ToolIcon from '../components/ToolIcon.astro';
-import SectionHeading from '../components/SectionHeading.astro';
+import Hero from '../components/Hero.astro';
+import ToolCarousel from '../components/ToolCarousel.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { profile } from '../data/profile';
+import Interests from '../components/Interests.astro';
+import Contact from '../components/Contact.astro';
+import { categories } from '../data/tools';
 import { projects } from '../data/projects';
-import { skills, exploring } from '../data/skills';
-import { interests, strengths } from '../data/interests';
 ---
 <BaseLayout>
-  <section class="container hero" aria-labelledby="welcome">
-    <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> PLAYER ONE HAS ENTERED THE CHAT</p><h1 id="welcome">JUSTIN<br /><span>JOEL<span class="title-cursor" aria-hidden="true">_</span></span></h1><p class="hero-role">DEVELOPER. BUILDER. CURIOUS HUMAN.</p><p class="hero-intro">Welcome to my corner of the internet. I build web apps, explore mobile worlds, and turn “what if?” into something you can click.</p><div class="hero-actions"><a class="button primary" href="#projects"><span aria-hidden="true">▷</span> Explore projects</a><a class="button" href="#arcade">Play a side quest <span aria-hidden="true">↗</span></a></div><div class="player-tag"><span class="pixel-avatar" aria-hidden="true">✛</span><span><strong>{profile.name}</strong><small>Software Engineering @ UNIMAS</small></span><span class="player-id" aria-hidden="true">P1</span></div></div>
-    <CityScene />
+  <Hero />
+  <section class="section toolkit" aria-labelledby="toolkit-heading">
+    <div class="section-heading"><p class="eyebrow">MY TOOLKIT</p><h2 id="toolkit-heading">Tools I build with<span class="accent">.</span></h2><p>Some familiar tools, and a few I'm still getting to know.</p></div>
+    <p class="carousel-hint">Drag, swipe, or use the arrows to explore. Hover to take a closer look.</p>
+    {categories.map((category) => <ToolCarousel category={category} />)}
   </section>
-  <div class="ticker"><div class="container"><span>BUILD / BREAK / LEARN / REPEAT</span><span aria-hidden="true">✦</span><span>WEB + MOBILE + WHAT’S NEXT</span><span aria-hidden="true">✦</span><span>SELECT YOUR NEXT ADVENTURE ↓</span></div></div>
-  <section id="projects" class="container section">
-    <div id="explorations" class="anchor-target"></div>
-    <SectionHeading number="01" label="mission select" title="Choose your next click."><p>Things I’ve built. Things I’m figuring out. Open a project to look under the hood.</p></SectionHeading>
-    <div class="gallery-toolbar"><div class="project-filters" role="group" aria-label="Filter projects" hidden><button data-filter="built" aria-pressed="true">Built projects</button><button data-filter="exploring" aria-pressed="false">Explorations</button><button data-filter="all" aria-pressed="false">All projects</button></div><p id="project-count" role="status">06 projects to explore</p></div>
-    <div class="project-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} />)}</div>
-    <div class="gallery-footer"><p>Explorations are learning projects and concepts, with completion and outcomes unverified.</p><a class="text-link" href={profile.contacts.find(c => c.label === 'GitHub')!.href}>More on GitHub <span aria-hidden="true">↗</span></a></div>
+  <section id="projects" class="section projects" aria-labelledby="projects-heading">
+    <div class="section-heading"><p class="eyebrow">LEARNING BY DOING</p><h2 id="projects-heading">Things I've built<span class="accent">.</span></h2><p>A few projects, and what I learned along the way.</p></div>
+    <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-6">{projects.filter((project) => project.visible).map((project, index) => <ProjectCard project={project} index={index} />)}</div>
   </section>
-  <section id="skills" class="section loadout-section"><div class="container">
-    <SectionHeading number="02" label="equipment inventory" title="Pick your loadout."><p>Tools I’ve worked with to build, debug, and connect things. Select an item to inspect it.</p></SectionHeading>
-    <div class="skills-grid">{skills.map((group, index) => <div class="skill-group"><h3><span>{String(index + 1).padStart(2, '0')} /</span> {group.title}</h3><ul class="tool-list">{group.items.map(item => <li><button class="tool-tile" data-tool={item} data-group={group.title} aria-pressed="false"><ToolIcon name={item} /><span>{item}</span><span class="tool-corner" aria-hidden="true">+</span></button></li>)}</ul></div>)}</div>
-    <p id="tool-readout" class="tool-readout" role="status" hidden>Select a tool to inspect your loadout.</p>
-    <details class="exploring-tools"><summary>Experimental inventory <span>Currently exploring ↓</span></summary><p>Learning and experimentation, separate from the work above.</p><ul class="tool-list">{exploring.map(item => <li><button class="tool-tile" data-tool={item} data-group="Experimental inventory" data-exploring="true" aria-pressed="false"><ToolIcon name={item} /><span>{item}</span></button></li>)}</ul></details>
-  </div></section>
-  <Arcade />
-  <section id="about" class="section about-section"><div class="container about-grid">
-    <div><SectionHeading number="04" label="player profile" title="Meet the human behind the handle." /><p class="profile-intro">{profile.intro}</p><a class="text-link" href="#contact">Open a conversation <span aria-hidden="true">↗</span></a></div>
-    <div class="profile-console panel"><div class="window-bar"><span>PLAYER_PROFILE.DAT</span><span aria-hidden="true">[ JJ ]</span></div><div class="panel-content"><p class="eyebrow">{profile.fullName}</p><h3>Always learning.<br />Always building.</h3><p>{profile.biography[1]}</p><details><summary>Experience log</summary><div class="experience">{profile.experience.map(item => <article><p class="eyebrow">{item.dates}</p><h4>{item.role}</h4><p class="organization">{item.organization}</p><p>{item.description}</p></article>)}</div></details><details><summary>Education & additional learning</summary><div class="education">{profile.education.map(item => <article><p class="eyebrow">{item.dates}</p><h4>{item.qualification}</h4><p>{item.institution}</p></article>)}<p>{profile.credentials.join(' · ')}</p></div></details><details><summary>How I work</summary><dl class="strengths">{strengths.map(item => <div><dt>{item.title}</dt><dd>{item.description}</dd></div>)}</dl></details></div></div>
-  </div></section>
-  <section id="beyond-code" class="container section">
-    <SectionHeading number="05" label="off-duty mode" title="Not always at the keyboard."><p>A few interests from the other tabs in my life.</p></SectionHeading>
-    <div class="interest-grid">{interests.map((interest,index) => <article class="interest-card" data-tilt><span class="interest-symbol" aria-hidden="true">{['↟', '◒', '⌘', '✳'][index]}</span><p class="eyebrow">SIDE INTEREST / 0{index + 1}</p><h3>{interest.title}</h3><p>{interest.description}</p></article>)}</div>
-    <div class="languages"><h3>Language pack</h3><ul>{profile.languages.map(language => <li><strong>{language.name}</strong><span>{language.level}</span></li>)}</ul></div>
-  </section>
-  <section id="contact" class="container section contact-section"><div class="contact-panel panel"><div class="window-bar"><span>06 / OPEN COMMS</span><span aria-hidden="true">↗</span></div><div class="contact-content"><div><p class="eyebrow">CO-OP STARTS WITH A HELLO.</p><h2>Got an idea?<br /><span>Let’s build it.</span></h2><p>Interested in my work or have a project to discuss? Send an email or find me around the internet.</p></div><div class="contact-links">{profile.contacts.map(contact => <a href={contact.href}><span><span class="eyebrow">{contact.label}</span><strong>{contact.value}</strong></span><span aria-hidden="true">↗</span></a>)}</div></div></div></section>
+  <Interests /><Contact />
 </BaseLayout>
+<script>import '../scripts/tool-carousel';</script>
