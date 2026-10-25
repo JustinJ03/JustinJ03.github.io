@@ -8,7 +8,7 @@ type Profile = {
   background: string;
   strengths: string;
   languages: string;
-  contact: { heading: string; description: string; linkedin: string; github: string; email: string };
+  contact: { heading: string; description: string; linkedin: string; github: string;};
 };
 
 export const profile: Profile = {
@@ -24,8 +24,7 @@ export const profile: Profile = {
   contact: {
     heading: 'Say hello.',
     description: 'Want to talk about a project, share an idea, or just connect? Find me here.',
-    linkedin: 'https://www.linkedin.com/in/justin-joel-925819247',
+    linkedin: 'https://www.linkedin.com/in/justin-joel-juni-925819247/',
     github: 'https://github.com/JustinJ03',
-    email: 'justin03joel@gmail.com',
   },
 };
